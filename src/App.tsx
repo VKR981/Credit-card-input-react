@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
+import CreditCardInput from "./components/CreditCardInput";
 
 function App() {
+  const [list, setList] = useState<string[]>([]);
+  const handleSubmit = (item: string) => {
+    console.log(item);
+
+    setList((prevList) => [...prevList, item]);
+  };
+
+  const handleDelete  =  (item:  string)  =>  {
+    setList((prevList) => prevList.filter((card)  =>  card  !==  item));
+  };;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CreditCardInput handleSubmit={handleSubmit} />
+      <ul className="list">
+        {list.map((item, idx) => (
+          <li key={idx}>
+            {item}
+            <button onClick={()  =>  handleDelete(item)}>delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
