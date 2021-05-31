@@ -16,12 +16,13 @@ function App() {
   };;
   return (
     <div className="App">
+      <h6>Enter card number</h6>
       <CreditCardInput handleSubmit={handleSubmit} />
       <ul className="list">
         {list.map((item, idx) => (
           <li key={idx}>
             {item}
-            <button onClick={()  =>  handleDelete(item)}>delete</button>
+            <button onClick={() => handleDelete(item)}>delete</button>
           </li>
         ))}
       </ul>

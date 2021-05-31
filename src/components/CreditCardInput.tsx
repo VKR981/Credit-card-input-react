@@ -81,32 +81,34 @@ function CreditCardInput({
   };
   return (
     <div>
-      <h6>Enter card number</h6>
+      
       <form className="credCardForm" action="">
-        <input
-          onChange={handleInput}
-          id="0"
-          value={cardNumber["0"].value}
-          className="credCardInput0"
-        ></input>
-        <input
-          onChange={handleInput}
-          id="1"
-          value={cardNumber["1"].value}
-          className="credCardInput1"
-        ></input>
-        <input
-          onChange={handleInput}
-          id="2"
-          value={cardNumber["2"].value}
-          className="credCardInput2"
-        ></input>
-        <input
-          onChange={handleInput}
-          id="3"
-          value={cardNumber["3"].value}
-          className="credCardInput3"
-        ></input>
+        <div>
+            <input
+              onChange={handleInput}
+              id="0"
+              value={cardNumber["0"].value}
+              className="credCardInput0"
+            ></input>
+            <input
+              onChange={handleInput}
+              id="1"
+              value={cardNumber["1"].value}
+              className="credCardInput1"
+            ></input>
+            <input
+              onChange={handleInput}
+              id="2"
+              value={cardNumber["2"].value}
+              className="credCardInput2"
+            ></input>
+            <input
+              onChange={handleInput}
+              id="3"
+              value={cardNumber["3"].value}
+              className="credCardInput3"
+            ></input>
+        </div>
         <button onClick={handleFormSubmit}>submit</button>
       </form>
     </div>
