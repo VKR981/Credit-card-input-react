@@ -16,8 +16,6 @@ function CreditCardInput({
     const { value, id } = e.target;
 
     if (!value.match(/^[0-9]+$/) && value !== "") {
-      console.log("c");
-
       return;
     }
 
@@ -65,7 +63,7 @@ function CreditCardInput({
     e.preventDefault();
 
     const card = Object.values(cardNumber).reduce(
-      (prevValue, item, idx) => item.value + prevValue,
+      (prevValue, item, idx) => prevValue + item.value,
       ""
     );
     if (card.length === 16) {
